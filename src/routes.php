@@ -6,6 +6,19 @@ require "models/redisclass.php";
 require "models/mongoclass.php";
 require "controllers/mogodbcontroller.php";
 
+/*
+ * Endpoint /tasks/
+ * Method GET
+ *
+ * List tasks filtered by completed/uncompleted, due date, creation date and update date
+ *
+ * @param (Bool) completed
+ * @param (String) due_date
+ * @param (String) creation_date
+ * @param (String) update_date
+
+ * @return (Json) Tasks
+ */
 $app->get('/tasks/', function( $request, $response, $args ) use ($config) {
     try{
     	//Get list of tasks
@@ -18,6 +31,20 @@ $app->get('/tasks/', function( $request, $response, $args ) use ($config) {
 	}
 });
 
+
+/*
+ * Endpoint /tasks/{_id}
+ * Method PUT
+ *
+ * Update task
+ *
+ * @param (String) title
+ * @param (String) description
+ * @param (Bool) completed
+ * @param (String) due_date
+ *
+ * @return (Json) Result
+ */
 $app->put('/tasks/{_id}', function ($request, $response, $args) use ($config){
 	try{
 		//Get data from mongo
@@ -44,6 +71,16 @@ $app->put('/tasks/{_id}', function ($request, $response, $args) use ($config){
 	}
 });
 
+/*
+ * Endpoint /tasks/{_id}
+ * Method GET
+ *
+ * Get task by id
+ *
+ * @param (String) _id
+ *
+ * @return (Json) Task
+ */
 $app->get('/tasks/{_id}', function( $request, $response, $args) use ($config){
     try {
     	
@@ -61,6 +98,19 @@ $app->get('/tasks/{_id}', function( $request, $response, $args) use ($config){
 	} 
 });
 
+/*
+ * Endpoint /tasks/
+ * Method POST
+ *
+ * Create new task
+ *
+ * @param (Bool) completed
+ * @param (String) title
+ * @param (String) description
+ * @param (String) due_date
+
+ * @return (Json) Result
+ */
 $app->post('/tasks/', function ($request, $response, $args) use ($config) {
     
 	try{
@@ -89,6 +139,16 @@ $app->post('/tasks/', function ($request, $response, $args) use ($config) {
 	}
 });
 
+/*
+ * Endpoint /tasks/{_id}
+ * Method DELETE
+ *
+ * Delete task
+ *
+ * @param (String) _id
+ *
+ * @return (Json) Result
+ */
 $app->delete('/tasks/{_id}', function( $request, $response, $args ) use ($config) {
 	try {
 
