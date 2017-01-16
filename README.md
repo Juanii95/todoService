@@ -1,5 +1,5 @@
 # To Do Service
-REST web service of a TO DO list. The actions to perform are create, update, delete, show and list tasks.
+REST web service of a TO DO list. The actions to perform are: create, update, delete, show and list tasks.
 
 ### Version
 0.0.1
@@ -74,11 +74,11 @@ Create new Task.
 
 #### Params:
 
-| Param     | type    | description |
+| Param     | Type    | Description |
 | --------|---------|-------|
 | title  | String   | Title of the task   |
-| description  | String   | Title of the task   |
-| completed  | bool   | true/false for completed/uncompleted   |
+| description  | String   | Description of the task   |
+| completed  | Bool   | true/false for completed/uncompleted   |
 | due_date  | String   | Due date of the task   |
 
 #### Succes Response:
@@ -150,12 +150,11 @@ Update task by id.
 #### Params:
 
 
-| Param     | type    | description |
+| Param     | Type    | Description |
 | --------|---------|-------|
 | title  | String   | Title of the task   |
-| description  | String   | Title of the task   |
-
-| completed  | bool   | true/false for completed/uncompleted   |
+| description  | String   | Description of the task   |
+| completed  | Bool   | true/false for completed/uncompleted   |
 | due_date  | String   | Due date of the task   |
 
 #### Succes Response:
@@ -198,15 +197,15 @@ Content-Type: application/json;charset=utf-8
 #### Method: GET
 
 List task filtered by completed/uncompleted, due date, creation date and update date.
-Showing only 5 results per page, use offset to paginate results
+Showing only 5 results per page, use offset to paginate results.
 
 #### URL Params:
 
-All parameters are combinable and optional
+All parameters are combinable and optional.
 
-| Param     | type    | description |
+| Param     | Type    | Description |
 | --------|---------|-------|
-| completed  | bool   | true/false for completed/uncompleted tasks   |
+| completed  | Bool   | true/false for completed/uncompleted tasks   |
 | due_date  | String   | Filter by due date "20170116"   |
 | created_at  | String   | Filter by date of creation "20170116" |
 | updated_at  | String   | Filter by date of update "20170116"  |
