@@ -1,5 +1,6 @@
 # To Do Service
-REST web service of a TO DO list. The actions to perform are: create, update, delete, show and list tasks.
+Todo list application. The data is stored and accessed from a RESTful web service. 
+Actions to perform: create, update, delete, show and list tasks.
 
 ### Version
 0.0.1
@@ -76,10 +77,10 @@ Create new Task.
 
 | Param     | Type    | Description |
 | --------|---------|-------|
-| title  | String   | Title of the task   |
-| description  | String   | Description of the task   |
+| title  | String   | Task title   |
+| description  | String   | Task description   |
 | completed  | Bool   | true/false for completed/uncompleted   |
-| due_date  | String   | Due date of the task   |
+| due_date  | String   | Task due date   |
 
 #### Succes Response:
 
@@ -196,8 +197,7 @@ Content-Type: application/json;charset=utf-8
 
 #### Method: GET
 
-List task filtered by completed/uncompleted, due date, creation date and update date.
-Showing only 5 results per page, use offset to paginate results.
+List tasks filtered by completed/uncompleted, due date, creation date and update date. Only 5 results per page will be shown; use offset to paginate results.
 
 #### URL Params:
 
@@ -209,7 +209,7 @@ All parameters are combinable and optional.
 | due_date  | String   | Filter by due date "20170116"   |
 | created_at  | String   | Filter by date of creation "20170116" |
 | updated_at  | String   | Filter by date of update "20170116"  |
-| offset  | String   | Used for pagination   |
+| offset  | String   | Use for pagination   |
 
 #### Succes Response:
 
